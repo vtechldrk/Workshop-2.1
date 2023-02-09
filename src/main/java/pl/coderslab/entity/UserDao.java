@@ -13,7 +13,7 @@ public class UserDao {
     private static final String UPDATE_USER_QUERY =
             "UPDATE users SET username = ?, email = ?, passwd = ? WHERE id = ?";
     private static final String DELETE_USER_QUERY =
-            "DELETE FROM users where user_id = ?";
+            "DELETE FROM users where id = ?";
     private static final String FINDALL_USER_QUERY =
             "SELECT * FROM users";
 
@@ -74,6 +74,18 @@ public class UserDao {
 
             statement.executeUpdate();
 
+        } catch (SQLException e) {
+            System.out.println("Błąd modyfikacji rekordu." + e.getErrorCode());
+            //e.printStackTrace();
+        }
+    }
+
+    public void delete(int userId) {
+        try (Connection conn = DbUtil.getConnection()){
+            PreparedStatement statement =
+                    conn.prepareStatement(DELETE_USER_QUERY);
+            statement.setInt(1, userId);
+            statement.executeUpdate();
         } catch (SQLException e) {
             System.out.println("Błąd modyfikacji rekordu." + e.getErrorCode());
             //e.printStackTrace();

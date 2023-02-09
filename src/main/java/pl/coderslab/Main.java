@@ -26,15 +26,18 @@ public class Main {
 
 // UPDATE USERA / rekordu
 
-        UserDao readDaoUser = new UserDao();
-        User readUser = readDaoUser.read(58);
-        System.out.println("ID: " + readUser.getId() + "\nUsername: " + readUser.getUserName() + "\nPassword: " +readUser.getPassword() + "\nemail: " + readUser.getEmail());
+//        UserDao readDaoUser = new UserDao();
+//        User readUser = readDaoUser.read(58);
+//        System.out.println("ID: " + readUser.getId() + "\nUsername: " + readUser.getUserName() + "\nPassword: " +readUser.getPassword() + "\nemail: " + readUser.getEmail());
+//
+//        readUser.setUserName("testupdate");
+//        readUser.setEmail("update@update.com");
+//        readUser.setPassword("updatedHaslo");
+//
+//        readDaoUser.update(readUser);
 
-        readUser.setUserName("testupdate");
-        readUser.setEmail("update@update.com");
-        readUser.setPassword("updatedHaslo");
-
-        readDaoUser.update(readUser);
+        UserDao deldaoUser = new UserDao();
+        deldaoUser.delete(60);
 
     }
 
