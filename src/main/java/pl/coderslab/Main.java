@@ -20,11 +20,22 @@ public class Main {
 
  //       CZYTANIE USERA
 
+//        UserDao readDaoUser = new UserDao();
+//        User readUser = readDaoUser.read(58);
+//        System.out.println("ID: " + readUser.getId() + "\nUsername: " + readUser.getUserName() + "\nPassword: " +readUser.getPassword() + "\nemail: " + readUser.getEmail());
+
+// UPDATE USERA / rekordu
+
         UserDao readDaoUser = new UserDao();
         User readUser = readDaoUser.read(58);
         System.out.println("ID: " + readUser.getId() + "\nUsername: " + readUser.getUserName() + "\nPassword: " +readUser.getPassword() + "\nemail: " + readUser.getEmail());
 
-        
+        readUser.setUserName("testupdate");
+        readUser.setEmail("update@update.com");
+        readUser.setPassword("updatedHaslo");
+
+        readDaoUser.update(readUser);
+
     }
 
 
