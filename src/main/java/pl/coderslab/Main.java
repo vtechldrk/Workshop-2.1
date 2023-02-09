@@ -1,7 +1,8 @@
 package pl.coderslab;
 
-import pl.coderslab.entity.*;
-
+//import pl.coderslab.entity.*;
+import pl.coderslab.entity.UserDao;
+import pl.coderslab.entity.User;
 import java.util.Arrays;
 
 public class Main {
@@ -51,7 +52,7 @@ public class Main {
 //        for (User u : all) {
 //            System.out.println(u.getEmail());
 //        }
-
+        System.out.println("koniec");
     }
 
 

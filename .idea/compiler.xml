@@ -9,8 +9,5 @@
         <module name="Workshop-2.1" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Workshop-2.1" target="17" />
-    </bytecodeTargetLevel>
   </component>
 </project>

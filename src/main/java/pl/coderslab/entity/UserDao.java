@@ -95,8 +95,8 @@ public class UserDao {
                 user.setPassword(resultSet.getString("passwd"));
 
                 allUsers = Arrays.copyOf(allUsers, allUsers.length + 1);
-                allUsers[]
-                allUsers = addToArray(user, allUsers);
+                allUsers[allUsers.length - 1] = user;
+                //allUsers = addToArray(user, allUsers);
                 for (User user1 : allUsers) {
                     System.out.println("---- id i email = " + user1.getId() + " " + user1.getEmail());
                 }
