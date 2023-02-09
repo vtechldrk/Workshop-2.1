@@ -4,6 +4,7 @@ import org.mindrot.jbcrypt.BCrypt;
 import pl.coderslab.DbUtil;
 
 import java.sql.*;
+import java.util.Arrays;
 
 public class UserDao {
     private static final String CREATE_USER_QUERY =
@@ -78,6 +79,47 @@ public class UserDao {
             System.out.println("Błąd modyfikacji rekordu." + e.getErrorCode());
             //e.printStackTrace();
         }
+    }
+    public static User[] findAll() {
+        try (Connection conn = DbUtil.getConnection()){
+            PreparedStatement statement =
+                    conn.prepareStatement(FINDALL_USER_QUERY);
+            ResultSet resultSet = statement.executeQuery();
+            User[] allUsers = new User[0];
+            while ( resultSet.next() ) {
+
+                User user = new User();
+                user.setId(resultSet.getInt("id"));
+                user.setUserName(resultSet.getString("username"));
+                user.setEmail(resultSet.getString("email"));
+                user.setPassword(resultSet.getString("passwd"));
+
+                allUsers = Arrays.copyOf(allUsers, allUsers.length + 1);
+                allUsers[]
+                allUsers = addToArray(user, allUsers);
+                for (User user1 : allUsers) {
+                    System.out.println("---- id i email = " + user1.getId() + " " + user1.getEmail());
+                }
+                System.out.println("------------------------");
+            }
+
+            System.out.println("users.length = " + allUsers.length);
+
+            return allUsers;
+        } catch (SQLException e) {
+            System.out.println("Błąd modyfikacji rekordu." + e.getErrorCode());
+            //e.printStackTrace();
+            return null;
+        }
+
+    }
+    private static User[] addToArray(User u, User[] users) {
+
+        User[] tmpUsers = Arrays.copyOf(users, users.length + 1);
+        tmpUsers[users.length - 1] = u;
+
+        return tmpUsers;
+
     }
 
 }

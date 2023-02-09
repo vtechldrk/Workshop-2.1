@@ -26,15 +26,31 @@ public class Main {
 
 // UPDATE USERA / rekordu
 
-        UserDao readDaoUser = new UserDao();
-        User readUser = readDaoUser.read(58);
-        System.out.println("ID: " + readUser.getId() + "\nUsername: " + readUser.getUserName() + "\nPassword: " +readUser.getPassword() + "\nemail: " + readUser.getEmail());
+//        UserDao readDaoUser = new UserDao();
+//        User readUser = readDaoUser.read(58);
+//        System.out.println("ID: " + readUser.getId() + "\nUsername: " + readUser.getUserName() + "\nPassword: " +readUser.getPassword() + "\nemail: " + readUser.getEmail());
+//
+//        readUser.setUserName("testupdate");
+//        readUser.setEmail("update@update.com");
+//        readUser.setPassword("updatedHaslo");
+//
+//        readDaoUser.update(readUser);
 
-        readUser.setUserName("testupdate");
-        readUser.setEmail("update@update.com");
-        readUser.setPassword("updatedHaslo");
+        UserDao findAllUsers = new UserDao();
+//        User[] users = new User[0];
+//        users = findAllUsers.findAll();
+//        System.out.println("users.length = " + users.length);
+//        System.out.println("users[15].getId() = " + users[15].getId());
 
-        readDaoUser.update(readUser);
+//        User secondUser = new User();
+//        secondUser.setUserName("marek");
+//        secondUser.setEmail("marek@coderslab.pl");
+//        secondUser.setPassword("pass");
+//        userDao.create(secondUser);
+        User[] all = findAllUsers.findAll();
+//        for (User u : all) {
+//            System.out.println(u.getEmail());
+//        }
 
     }
 
