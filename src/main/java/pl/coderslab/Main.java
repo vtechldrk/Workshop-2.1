@@ -56,7 +56,7 @@ public class Main {
        for (User u : all) {
            System.out.println(u.getEmail());
        }
-        System.out.println("koniec");
+        //System.out.println("koniec");
     }
 
 
