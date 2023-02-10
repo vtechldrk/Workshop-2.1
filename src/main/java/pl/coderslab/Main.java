@@ -48,6 +48,10 @@ public class Main {
 //        secondUser.setEmail("marek@coderslab.pl");
 //        secondUser.setPassword("pass");
 //        userDao.create(secondUser);
+
+        UserDao deldaoUser = new UserDao();
+        deldaoUser.delete(60);
+
        User[] all = findAllUsers.findAll();
        for (User u : all) {
            System.out.println(u.getEmail());
