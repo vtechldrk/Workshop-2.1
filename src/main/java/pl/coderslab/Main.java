@@ -48,10 +48,10 @@ public class Main {
 //        secondUser.setEmail("marek@coderslab.pl");
 //        secondUser.setPassword("pass");
 //        userDao.create(secondUser);
-        User[] all = findAllUsers.findAll();
-//        for (User u : all) {
-//            System.out.println(u.getEmail());
-//        }
+       User[] all = findAllUsers.findAll();
+       for (User u : all) {
+           System.out.println(u.getEmail());
+       }
         System.out.println("koniec");
     }
 

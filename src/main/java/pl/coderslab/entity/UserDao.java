@@ -93,29 +93,9 @@ public class UserDao {
                 user.setUserName(resultSet.getString("username"));
                 user.setEmail(resultSet.getString("email"));
                 user.setPassword(resultSet.getString("passwd"));
-                System.out.println("resultSet.getInt(\"id\") = " + resultSet.getInt("id"));
+                allUsers = addToArray(user, allUsers);
 
-                System.out.println("przed");
-                for ( int i = 0 ; i < allUsers.length; i++){
-                    System.out.println("allUsers[i].getId() = " + allUsers[i].getId());
-                    System.out.println("allUsers[i].getEmail() = " + allUsers[i].getEmail());
-
-                }
-
-                allUsers = Arrays.copyOf(allUsers, allUsers.length + 1);
-                allUsers[allUsers.length - 1] = user;
-                //allUsers = addToArray(user, allUsers);
-
-                for ( int i = 0 ; i < allUsers.length; i++){
-                    System.out.println("allUsers[i].getId() = " + allUsers[i].getId());
-                    System.out.println("allUsers[i].getEmail() = " + allUsers[i].getEmail());
-
-                }
-                System.out.println("------------------------");
             }
-
-            System.out.println("users.length = " + allUsers.length);
-
             return allUsers;
         } catch (SQLException e) {
             System.out.println("Błąd modyfikacji rekordu." + e.getErrorCode());
@@ -127,7 +107,7 @@ public class UserDao {
     private static User[] addToArray(User u, User[] users) {
 
         User[] tmpUsers = Arrays.copyOf(users, users.length + 1);
-        tmpUsers[users.length - 1] = u;
+        tmpUsers[users.length] = u;
 
         return tmpUsers;
 
