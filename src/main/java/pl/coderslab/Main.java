@@ -50,7 +50,7 @@ public class Main {
 //        userDao.create(secondUser);
 
         UserDao deldaoUser = new UserDao();
-        deldaoUser.delete(60);
+        deldaoUser.delete(62);
 
        User[] all = findAllUsers.findAll();
        for (User u : all) {
