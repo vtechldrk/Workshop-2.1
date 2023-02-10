@@ -93,12 +93,23 @@ public class UserDao {
                 user.setUserName(resultSet.getString("username"));
                 user.setEmail(resultSet.getString("email"));
                 user.setPassword(resultSet.getString("passwd"));
+                System.out.println("resultSet.getInt(\"id\") = " + resultSet.getInt("id"));
+
+                System.out.println("przed");
+                for ( int i = 0 ; i < allUsers.length; i++){
+                    System.out.println("allUsers[i].getId() = " + allUsers[i].getId());
+                    System.out.println("allUsers[i].getEmail() = " + allUsers[i].getEmail());
+
+                }
 
                 allUsers = Arrays.copyOf(allUsers, allUsers.length + 1);
                 allUsers[allUsers.length - 1] = user;
                 //allUsers = addToArray(user, allUsers);
-                for (User user1 : allUsers) {
-                    System.out.println("---- id i email = " + user1.getId() + " " + user1.getEmail());
+
+                for ( int i = 0 ; i < allUsers.length; i++){
+                    System.out.println("allUsers[i].getId() = " + allUsers[i].getId());
+                    System.out.println("allUsers[i].getEmail() = " + allUsers[i].getEmail());
+
                 }
                 System.out.println("------------------------");
             }

@@ -19,6 +19,7 @@ public class User {
         User.userName = userName;
     }
     public static String getEmail() {
+
         return email;
     }
     public static void setEmail(String email) {
