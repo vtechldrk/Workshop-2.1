@@ -40,4 +40,9 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public String toString() {
+        return "User{id="+this.id+", userName='"+this.userName+"', email='"+this.email+"'}";
+        //User{id=1, userName='arek', email='arkadiusz.jozwiak@coderslab.pl'}
+    }
 }

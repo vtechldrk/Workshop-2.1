@@ -53,10 +53,13 @@ public class Main {
         deldaoUser.delete(62);
 
        User[] all = findAllUsers.findAll();
+
        for (User u : all) {
-           System.out.println(u.getEmail());
+          // System.out.println(u.getEmail());
+           System.out.println(u);
        }
         //System.out.println("koniec");
+//Arrays,toString(all);
     }
 
 
